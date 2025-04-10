@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Caractère Typing</title>
+  <link rel="stylesheet" href="/assets/styles/sentence.css" />
+</head>
+<body>
+  <div class="header">
+    <button onclick="goBack()">←</button>
+    <h1>Caractère typing</h1>
+  </div>
+
+  <div class="stats">
+    <div><span>Correct</span><p id="correct">0</p></div>
+    <div><span>Faux</span><p id="wrong">0</p></div>
+    <div><span>Accurence</span><p id="accuracy">0</p></div>
+    <div><span>Speed</span><p id="speed">0</p></div>
+  </div>
+
+  <div class="main">
+    <div class="letter" id="current-letter">A</div>
+    <input type="text" id="input" maxlength="1" autofocus />
+  </div>
+
+  <script src="/assets/script/sentence.js"></script>
+</body>
+</html>

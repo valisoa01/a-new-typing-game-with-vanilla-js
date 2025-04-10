@@ -1,0 +1,39 @@
+:root{
+    ---primary-color : #001948;
+    ---secondary-color : #dfa408;
+
+}
+
+h2{
+    color: var(---secondary-color);
+}
+.entrainer {
+    background: var(---secondary-color);
+}
+.commender-btn{
+    background: var(---primary-color);
+    color: white;
+    transition: 0.5ms ease;
+}
+.commender-btn:hover{
+    background: var(---primary-color);
+    color:var(---secondary-color);
+ }
+body {
+    background-color: #00060cec;
+  }
+  .illustration-container {
+    text-align: center;
+    padding: 30px 0;
+  }
+  .illustration-container img {
+    max-width: 300px;
+    border-radius: 10px;
+  }
+  .card-option {
+    transition: transform 0.3s ease;
+  }
+  .card-option:hover {
+    transform: scale(1.05);
+  }
+ 

@@ -1,0 +1,134 @@
+:root {
+    --body-bg-color: #212529;
+    --body-text-color: #f8f9fa;
+    --navbar-bg-color: #212529;
+    --key-bg-color: #343a40;
+    --key-text-color: #f8f9fa;
+    --key-border-color: #495057;
+}
+h3{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+
+h3 .titre{
+    color: #dfa408;
+}
+.pressed {
+    background-color: #dfa408 !important;
+    color: white !important;
+    transform: scale(0.95);
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+.keyboard {
+    display: grid;
+    gap: 5px;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 10px;
+    width: fit-content;
+}
+.key {
+    width: 40px;
+    height: 40px;
+    margin: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background: #444444c8;
+    color: white;
+    font-size: 18px;
+    transition: transform 0.1s, background 0.1s;
+ }
+.pressed {
+    background-color:#dfa408 !important;
+    color: white !important;
+    transform: scale(0.95);
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+.key {
+    transition: all 0.1s ease;
+    display: inline-block;
+    margin: 2px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 30px;
+    border: 1px solid var(--key-border-color);
+    background-color: var(--key-bg-color);
+    color: var(--key-text-color);
+}
+.wide {
+    min-width: 60px;
+}
+.space {
+    min-width: 200px;
+}
+.row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+.key.wide {
+    width: 80px;
+}
+
+.key.space {
+    width: 240px;
+}
+
+.key.pressed {
+    transform: translateY(4px);
+    background: #555;
+}
+.row {
+    display: flex;
+    justify-content: center;
+}
+[data-bs-theme="dark"] {
+    background-color: #212529;
+    color: #f8f9fa;
+}
+[data-bs-theme="light"] {
+    background-color: #f8f9fa;
+    color: #212529;
+}
+.typing-container {
+    min-height: 50px;
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+
+[data-bs-theme="light"] {
+    --body-bg-color: #f8f9fa;
+    --body-text-color: #212529;
+    --navbar-bg-color: #f8f9fa;
+    --key-bg-color: #e9ecef;
+    --key-text-color: #212529;
+    --key-border-color: #dee2e6;
+}
+
+body {
+    background-color: var(--body-bg-color);
+    color: var(--body-text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar {
+    background-color: var(--navbar-bg-color) !important;
+    transition: background-color 0.3s;
+}
+
+.offcanvas {
+    background-color: var(--navbar-bg-color) !important;
+    transition: background-color 0.3s;
+}
+
+.typing-container {
+    min-height: 50px;
+    font-size: 24px;
+    margin: 20px 0;
+}

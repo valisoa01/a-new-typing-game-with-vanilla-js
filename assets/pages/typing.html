@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mot Vanilla Typing</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles/typing.css" />
+</head>
+<body class="bg-primary text-white">
+
+   <div class="container-fluid bg-dark py-2 px-3 d-flex justify-content-between align-items-center text-white border-bottom border-warning">
+    <div>
+      <button class="btn btn-outline-light btn-sm" onclick="goBack()">←</button>
+    </div>
+    <h5 class="mb-0">Mot vanilla typing</h5>
+    <div class="niveau d-flex gap-2 align-items-center text-white">
+      <span>Niveau ></span>
+      <span onclick="setLevel('easy')" class="niveau-link text-white fw-bold">Facile</span>
+      <span onclick="setLevel('medium')" class="niveau-link text-white">Moyenne</span>
+      <span onclick="setLevel('hard')" class="niveau-link text-white">Difficile</span>
+    </div>
+  </div>
+
+  <!-- Statistiques -->
+  <div class="container-fluid bg-light text-dark text-center py-3">
+    <div class="row fw-bold">
+      <div class="col">Correct<br><span id="correct" class="text-success">0</span></div>
+      <div class="col">Faux<br><span id="wrong" class="text-danger">0</span></div>
+      <div class="col">Accurence<br><span id="accuracy">0</span></div>
+      <div class="col">Speed<br><span id="speed">0</span></div>
+    </div>
+  </div>
+
+   <div class="container text-center mt-5 ">
+    <div id="phrase" class="fs-4 mb-4"></div>
+    <input id="input" type="text" class="form-control form-control-lg border-warning text-center" placeholder="Start Typing..." autofocus />
+  </div>
+
+  <script src="/assets/script/typing.js"></script>
+</body>
+</html>

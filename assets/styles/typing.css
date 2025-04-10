@@ -1,0 +1,23 @@
+.niveau-link {
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .niveau-link:hover,
+  .niveau-link.selected {
+    text-decoration: underline;
+    color: #ffc107;
+  }
+  
+  .word.correct {
+    color: lightgreen;
+  }
+  
+  .word.wrong {
+    color: red;
+  }
+  
+  .word.current {
+    text-decoration: underline;
+  }
+  

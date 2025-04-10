@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: sans-serif;
+    background: #0000;
+  }
+  #g_id_onload {
+    display: none;
+   }
+   
+@media screen and (max-width: 900px){
+    .input {
+      margin: auto;
+    }
+    .inputs{
+      margin: auto;
+    }
+  }
