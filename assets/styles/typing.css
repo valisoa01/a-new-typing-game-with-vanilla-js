@@ -1,23 +1,30 @@
-.niveau-link {
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .niveau-link:hover,
-  .niveau-link.selected {
-    text-decoration: underline;
-    color: #ffc107;
-  }
-  
-  .word.correct {
-    color: lightgreen;
-  }
-  
-  .word.wrong {
-    color: red;
-  }
-  
-  .word.current {
-    text-decoration: underline;
-  }
-  
+body {
+  font-family: Arial, sans-serif;
+}
+
+.word {
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.correct {
+   color: #155724;
+}
+
+.wrong {
+   color: #721c24;
+}
+
+.current {
+  /* background-color: #fff3cd; */
+  color: #856404;
+}
+
+h3{
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-style: italic;
+}
+
+h3 .titre{
+  color: #dfa408;
+}

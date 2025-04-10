@@ -101,7 +101,7 @@ h3 .titre{
     margin: 20px 0;
 }
 
-
+/*dark mode et light mode*/
 [data-bs-theme="light"] {
     --body-bg-color: #f8f9fa;
     --body-text-color: #212529;
@@ -132,3 +132,4 @@ body {
     font-size: 24px;
     margin: 20px 0;
 }
+ 

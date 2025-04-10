@@ -1,13 +1,10 @@
 function handleCredentialResponse(response) {
-  // Décoder le JWT pour extraire le nom, email, etc.
-  const data = parseJwt(response.credential);
+   const data = parseJwt(response.credential);
   console.log("Connecté avec :", data);
   
-  // Stocker les infos si besoin
-  localStorage.setItem("user", JSON.stringify(data));
+   localStorage.setItem("user", JSON.stringify(data));
 
-  // Rediriger vers page d'accueil
-  window.location.href = "/assets/pages/menu.html";
+   window.location.href = "/assets/pages/menu.html";
 }
 
 function parseJwt(token) {
@@ -29,3 +26,29 @@ window.onload = () => {
     { theme: "outline", size: "large" }
   );
 };
+
+const button = document.getElementById('btn');
+const password = document.getElementById('password');
+const mail = document.getElementById('email');
+const loginForm = document.getElementById('loginForm')
+
+loginForm.addEventListener('submit',(event)=>{
+  event.preventDefault();
+     
+ 
+  if (mail.value != "" && password.value != "") {
+    if (password.value.length >= 8 ) {
+    button.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Loading...';
+
+    setTimeout(()=>{
+      window.location.href = "/assets/pages/menu.html";
+    }, 3000)
+    
+  } else{
+    alert('error')
+  }
+
+    
+  }
+
+})
