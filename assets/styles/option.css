@@ -20,8 +20,20 @@ h2{
     color:var(---secondary-color);
  }
 body {
-    background-color: #00060cec;
-  }
+  background: #0a0a0ade;
+}
+.cards{
+  background-color: #4d4a4a32;
+}
+h3{
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-style: italic;
+  color: white;
+}
+
+h3 .titre{
+  color: #dfa408;
+}
   .illustration-container {
     text-align: center;
     padding: 30px 0;

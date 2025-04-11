@@ -4,13 +4,26 @@ body {
     align-items: center;
     height: 100vh;
     font-family: sans-serif;
-    background: #0000;
-  }
+    background: #0a0a0ade;
+   }
   #g_id_onload {
     display: none;
    }
+   .containers{
+    background-color: #4d4a4a32;
+   }
    
 @media screen and (max-width: 900px){
+  .illustration {
+    width: 80%;
+    height: 80%;
+  }
+  label{
+    color: black;
+  }
+    h3{
+      font-size: 1rem;
+    }
     .input {
       margin: auto;
     }
