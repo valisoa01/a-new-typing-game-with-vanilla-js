@@ -1,5 +1,10 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+header{
+  width: 100%;
+  padding: 20px;
+
 }
 
 .word {
@@ -8,23 +13,87 @@ body {
 }
 
 .correct {
-   color: #155724;
+  color: #155724;
 }
 
 .wrong {
-   color: #721c24;
+  color: #721c24;
 }
 
 .current {
-  /* background-color: #fff3cd; */
   color: #856404;
 }
 
-h3{
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+h3 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-style: italic;
 }
 
-h3 .titre{
+h3 .titre {
   color: #dfa408;
 }
+p{
+   width: 10%;
+   padding: 1rem 3.5rem;
+   margin: auto;
+   transition: 0.3ms;
+   background: blue;
+   cursor: pointer;
+}
+p:hover{
+  background: rgba(5, 5, 219, 0.895);
+}
+.section-text{
+  margin-top: 5vh;
+}
+b#statistique {
+  display: none;
+}
+
+.button{
+   padding: 1rem 3.5rem;
+  margin-left: 42vw;
+  transition: 0.3ms;
+  background: blue;
+  cursor: pointer;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  margin-top: 15vh;
+}
+.button:hover{
+  background: rgba(5, 5, 219, 0.895);
+}
+@media screen and (max-width: 900px){
+  header {
+      display: flex;
+      flex-direction: column;
+      line-height: 2;
+     }
+     .button{
+      margin-left: 30vw;
+      margin-top: 5vh;
+     }
+  h3{
+      font-size: 1.5rem;
+   }
+  h2{
+      font-size: 1rem;
+      margin-top: 4vh;
+  }
+  .section-text{
+      font-size: 0.8rem;
+      color: white;
+  }
+  .select,option{
+      font-size: 0.7rem;
+      width: 10vw;
+      margin-top: 5vh;
+   }
+   p{
+      width: 10%;
+      padding: 1rem 18rem;
+      margin: auto;
+      text-align: center;
+   }
+}  
