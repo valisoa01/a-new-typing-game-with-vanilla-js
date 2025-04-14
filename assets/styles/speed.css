@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+        
+body {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.cursor {
+    position: relative;
+}
+
+.cursor::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 24px;
+    background: #3b82f6;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.correct {
+    color: #10b981;
+}
+
+.incorrect {
+    color: #ef4444;
+    text-decoration: underline;
+}
+
+.current {
+    background-color: #e0f2fe;
+}
