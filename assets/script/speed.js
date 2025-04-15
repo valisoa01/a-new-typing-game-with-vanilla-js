@@ -162,3 +162,30 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+const themeToggle = document.getElementById('toggle-theme');
+const body = document.body;
+
+// Vérifie le thème enregistré dans localStorage
+if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+    body.classList.remove('light-mode');
+    document.documentElement.setAttribute('data-theme', 'dark');
+    themeToggle.textContent = '☀️ Mode Clair';
+} else {
+    body.classList.add('light-mode');
+    body.classList.remove('dark-mode');
+    document.documentElement.setAttribute('data-theme', 'light');
+    themeToggle.textContent = '🌙 Mode Sombre';
+}
+
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    body.classList.toggle('light-mode');
+
+    const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+    localStorage.setItem('theme', theme);
+    document.documentElement.setAttribute('data-theme', theme);
+
+    themeToggle.textContent = theme === 'dark' ? '☀️ Mode Clair' : '🌙 Mode Sombre';
+});
