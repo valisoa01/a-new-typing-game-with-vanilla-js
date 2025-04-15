@@ -1,102 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SpeedTyper - Typing Speed Test</title>
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
-        
-        body {
-            font-family: 'Roboto Mono', monospace;
-        }
-        
-        .cursor {
-            position: relative;
-        }
-        
-        .cursor::after {
-            content: "";
-            position: absolute;
-            width: 2px;
-            height: 24px;
-            background: #3b82f6;
-            animation: blink 1s infinite;
-        }
-        
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-        
-        .correct {
-            color: #10b981;
-        }
-        
-        .incorrect {
-            color: #ef4444;
-            text-decoration: underline;
-        }
-        
-        .current {
-            background-color: #e0f2fe;
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/styles/speed.css">
 </head>
-<body class="bg-secondary">
-    <div class="w-85 p-3 m-auto ">
-        <header class="text-center mb-8">
-            <h1 class="text-4xl font-bold text-gray-800 mb-2">SpeedTyper</h1>
-            <p class="text-gray-600">Test your typing speed and accuracy</p>
-        </header>
-        
-        <div class="bg-dark p-4 text-light rounded-2 ">
-            <div class="d-flex justify-content-between items-center mb-4">
-                <div class="d-flex gap-5 text-warning">
-                    <div class="bg-success text-white p-3 rounded-3">
-                        <span class="text-light">Time:</span> <span id="timer">60</span>s
-                    </div>
-                    <div class="bg-success text-light p-3 rounded-3">
-                        <span class="text-light">WPM:</span> <span id="wpm">0</span>
-                    </div>
-                    <div class="bg-secondary text-dark p-3 rounded-3">
-                        <span class="text-dark">Accuracy:</span> <span id="accuracy">0</span>%
-                    </div>
+<body class="bg-light text-dark">
+    <header class="bg-danger d-flex  justify-content-between p-3 align-items-center">
+        <h1 class="fw-bold">SpeedTyper</h1>
+        <p class="lead">Test your typing speed and accuracy</p>
+        <button id="toggle-theme" class="btn btn-outline-secondary btn-sm">🌙 Mode Sombre</button>
+    </header>
+
+    <div class="container my-5">
+
+
+        <div class="card shadow p-4" id="game-area">
+            <div class="d-flex justify-content-between flex-wrap mb-4 text-center gap-2">
+                <div class="info-box bg-success text-white p-3 rounded">
+                    Time: <span id="timer">60</span>s
                 </div>
-                
-                <button id="restart-btn" class="bg-secondary hover:bg-gray-200 text-body-tertiary p-2 rounded-3 transition">
-                    Restart
-                </button>
+                <div class="info-box bg-primary text-white p-3 rounded">
+                    WPM: <span id="wpm">0</span>
+                </div>
+                <div class="info-box bg-warning text-dark p-3 rounded">
+                    Accuracy: <span id="accuracy">0</span>%
+                </div>
+                <button id="restart-btn" class="btn btn-secondary">🔁 Restart</button>
             </div>
-            
-            <div id="text-display" class="bg-secondary p-4 rounded-3 text-body-tertiary text-primary  h-auto overflow-y-auto mb-4">
+
+            <div id="text-display" class="bg-light border p-3 rounded text-wrap mb-3" style="min-height: 120px;">
                 Loading text...
             </div>
-            
-            <div class="relative ">
+
+            <div class="position-relative">
                 <textarea 
                     id="input-field" 
-                    class="w-100 p-3 border border-secondary rounded-3 " 
+                    class="form-control p-3" 
                     rows="4" 
                     placeholder="Start typing here..." 
-                    disabled
-                ></textarea>
-                <div id="start-overlay" class="position-absolute inset-0  bg-opacity-100 flex items-center justify-center rounded-lg text-dark">
-                    <button id="start-btn" class="bg-primary hover:bg-secondary m-lg-5 mt-5 text-white px-6 py-3 rounded-3 text-dark  transition">
-                        Start Typing Test
-                    </button>
+                    disabled></textarea>
+                <div id="start-overlay" class="overlay">
+                    <button id="start-btn" class="btn btn-primary btn-lg">🚀 Start Typing Test</button>
                 </div>
             </div>
         </div>
-        
-        <div class="text-center text-light">
-            <p>Press space after each word. Test ends when time runs out.</p>
+
+        <div class="text-center mt-3 text-muted">
+            <p>Press space after each word. The test ends when time runs out.</p>
+        </div>
+
+        <div id="result-popup" class="popup d-none">
+            <div class="popup-content">
+                <h2 id="result-title"></h2>
+                <p id="result-message"></p>
+                <div class="d-flex gap-2 justify-content-center mt-3">
+                    <button id="menu-btn" class="btn btn-outline-dark">🏠 Menu</button>
+                    <button id="restart-final" class="btn btn-outline-primary">🔁 Rejouer</button>
+                    <button id="continue-btn" class="btn btn-success d-none">➡️ Continuer</button>
+                </div>
+            </div>
         </div>
     </div>
-    
+
     <script src="/assets/script/speed.js"></script>
 </body>
 </html>

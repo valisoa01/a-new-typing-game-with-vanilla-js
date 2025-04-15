@@ -35,9 +35,27 @@
 h2{
     color: var(---secondary-color);
 }
-.entrainer {
-    background: blue;
+ .entrainer {
+  background-color: transparent;
+  color: #000000;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+ body.dark-mode .entrainer {
+  background-color:transparent;
+  border:1px solid #dfa408;
+  color:white;
+  transition: background-color 0.3s ease, color 0.3s ease ;
+}
+body.dark-mode .entrainer:hover{
+  background: #dfa408;
+  color: #000000;
+}
+
+
+
+ 
+
 .commender-btn{
     background: var(---primary-color);
     color: white;
@@ -192,11 +210,18 @@ h3 .titre{
   pointer-events: none; 
 }
 
+body.dark-mode .bubble{
+   color:#121212;
+  font-weight: bold;
+  background:  var(--secondary-color);
+}
+
 .bubble {
   position: absolute;
   bottom: -100px;
-  background: var(--secondary-color);
+  background: #112e9e;
   color: var(--bg-color);
+  font-weight: bold;
   border-radius: 50%;
   display: flex;
   justify-content: center;
