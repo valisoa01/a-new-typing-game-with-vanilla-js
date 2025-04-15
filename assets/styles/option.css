@@ -82,6 +82,66 @@ h1, h2, h3, h4, h5, h6 {
 .card-header {
   background-color: var(--card-header-bg) !important;
 }
+ 
+.userImage{
+  cursor: pointer;
+}
+h2 span{
+  color: #dfa408;
+}
+h2{
+  margin-left: 20vw;
+}
+.user-info{
+  margin-left: -15vw;
+ }
+ .dropdown-menu-user {
+  background: #2a04e8f7;
+  height: 20%;
+  margin-top: 2vh;
+  min-width: 200px;
+  color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease ;
+ }
+ #userEmail,  #userName{
+  font-size: 0.8rem;
+  color: #ffffff;
+ }
+ .buttom{
+  margin-top: 3vh;
+  margin-left: 2vw;
+  background:#c70303;
+  padding: 10px;
+  color: #ffffff;
+  transition: 0.3s ease;
+ }
+ .buttom:hover{
+  color: #ffffff;
+  background:#b80404;
+ }
+ body.dark-mode .buttom{
+  background: #000000;
+  color: #ffffff;
+  transition: 0.3s ease;
+ }
+ body.dark-mode .buttom:hover{
+  background: #000000dd;
+  color: #ffffff;
+ }
+ body.dark-mode .header{
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),0 2px 4px -1px rgba(0,0,0,0.06);
+ }
+ body.dark-mode .dropdown-menu-user{
+  background: #ffc107;
+  color: #000000;
+ }
+ body.dark-mode #userEmail{
+  color: #000000;
+ }
+ body.dark-mode #userName{
+  color: #000000;
+ }
+
 .theme-switch-wrapper {
   position: absolute;
   top: 20px;
