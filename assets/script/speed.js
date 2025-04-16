@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // DOM Elements
-    const textDisplay = document.getElementById('text-display');
+     const textDisplay = document.getElementById('text-display');
     const inputField = document.getElementById('input-field');
     const timerElement = document.getElementById('timer');
     const wpmElement = document.getElementById('wpm');
@@ -9,8 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const restartBtn = document.getElementById('restart-btn');
     const startOverlay = document.getElementById('start-overlay');
     
-    // Sample texts for typing test
-    const sampleTexts = [
+     const sampleTexts = [
         "The quick brown fox jumps over the lazy dog. This sentence contains all the letters in the English alphabet. Typing is an essential skill in today's digital world.",
         "Programming is the process of creating a set of instructions that tell a computer how to perform a task. JavaScript is one of the core technologies of the World Wide Web.",
         "Practice makes perfect. The more you type, the faster and more accurate you will become. Consistency is key when trying to improve your typing skills.",
@@ -18,8 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Technology has transformed the way we communicate and work. Being able to type efficiently can significantly boost your productivity in many professional fields."
     ];
     
-    // Variables
-    let timer;
+     let timer;
     let timeLeft = 60;
     let isTyping = false;
     let currentText = '';
@@ -29,28 +26,24 @@ document.addEventListener('DOMContentLoaded', () => {
     let startTime;
     let wordsTyped = 0;
     
-    // Initialize the app
-    init();
+     init();
     
     function init() {
-        // Reset all variables
-        timeLeft = 60;
+         timeLeft = 60;
         isTyping = false;
         typedText = '';
         correctChars = 0;
         totalChars = 0;
         wordsTyped = 0;
         
-        // Update UI
-        timerElement.textContent = timeLeft;
+         timerElement.textContent = timeLeft;
         wpmElement.textContent = '0';
         accuracyElement.textContent = '0';
         inputField.value = '';
         inputField.disabled = true;
         startOverlay.classList.remove('hidden');
         
-        // Load a random text
-        currentText = sampleTexts[Math.floor(Math.random() * sampleTexts.length)];
+         currentText = sampleTexts[Math.floor(Math.random() * sampleTexts.length)];
         renderText();
     }
     
@@ -72,8 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         textDisplay.innerHTML = html;
         
-        // Scroll to current position
-        const currentSpan = textDisplay.querySelector('.current');
+         const currentSpan = textDisplay.querySelector('.current');
         if (currentSpan) {
             currentSpan.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
@@ -86,13 +78,14 @@ document.addEventListener('DOMContentLoaded', () => {
         startOverlay.classList.add('hidden');
         startTime = new Date().getTime();
         
-        // Start timer
-        timer = setInterval(() => {
+         timer = setInterval(() => {
             timeLeft--;
             timerElement.textContent = timeLeft;
+        
             
             if (timeLeft <= 0) {
                 endTest();
+                
             }
         }, 1000);
     }
@@ -102,12 +95,11 @@ document.addEventListener('DOMContentLoaded', () => {
         isTyping = false;
         inputField.disabled = true;
         
-        // Calculate final WPM and accuracy
-        calculateStats();
+         calculateStats();
     }
     
     function calculateStats() {
-        const timeElapsed = (60 - timeLeft) / 60; // in minutes
+        const timeElapsed = (60 - timeLeft) / 60; 
         const accuracy = totalChars > 0 ? Math.round((correctChars / totalChars) * 100) : 0;
         const wpm = timeElapsed > 0 ? Math.round(wordsTyped / timeElapsed) : 0;
         
@@ -117,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function updateStats() {
         const currentTime = new Date().getTime();
-        const timeElapsed = (currentTime - startTime) / 60000; // in minutes
+        const timeElapsed = (currentTime - startTime) / 60000; 
         const accuracy = totalChars > 0 ? Math.round((correctChars / totalChars) * 100) : 0;
         const wpm = timeElapsed > 0 ? Math.round(wordsTyped / timeElapsed) : 0;
         
@@ -125,7 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
         wpmElement.textContent = wpm;
     }
     
-    // Event Listeners
     startBtn.addEventListener('click', startTest);
     restartBtn.addEventListener('click', init);
     
@@ -135,57 +126,28 @@ document.addEventListener('DOMContentLoaded', () => {
         typedText = e.target.value;
         totalChars = typedText.length;
         
-        // Count correct characters
-        correctChars = 0;
+         correctChars = 0;
         for (let i = 0; i < typedText.length; i++) {
             if (typedText[i] === currentText[i]) {
                 correctChars++;
             }
         }
         
-        // Count words (split by space)
-        wordsTyped = typedText.trim() === '' ? 0 : typedText.trim().split(/\s+/).length;
+         wordsTyped = typedText.trim() === '' ? 0 : typedText.trim().split(/\s+/).length;
         
         renderText();
         updateStats();
         
-        // Check if user has completed the text
-        if (typedText.length === currentText.length) {
+         if (typedText.length === currentText.length) {
             endTest();
         }
     });
     
     inputField.addEventListener('keydown', (e) => {
-        // Prevent backspace from going beyond the current typed length
-        if (e.key === 'Backspace' && inputField.selectionStart === 0) {
+         if (e.key === 'Backspace' && inputField.selectionStart === 0) {
             e.preventDefault();
         }
     });
 });
 
-const themeToggle = document.getElementById('toggle-theme');
-const body = document.body;
-
-// Vérifie le thème enregistré dans localStorage
-if (localStorage.getItem('theme') === 'dark') {
-    body.classList.add('dark-mode');
-    body.classList.remove('light-mode');
-    document.documentElement.setAttribute('data-theme', 'dark');
-    themeToggle.textContent = '☀️ Mode Clair';
-} else {
-    body.classList.add('light-mode');
-    body.classList.remove('dark-mode');
-    document.documentElement.setAttribute('data-theme', 'light');
-    themeToggle.textContent = '🌙 Mode Sombre';
-}
-
-themeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    body.classList.toggle('light-mode');
-
-    const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
-    localStorage.setItem('theme', theme);
-    document.documentElement.setAttribute('data-theme', theme);
-
-    themeToggle.textContent = theme === 'dark' ? '☀️ Mode Clair' : '🌙 Mode Sombre';
-});
+ 

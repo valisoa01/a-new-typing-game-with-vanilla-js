@@ -11,34 +11,7 @@
     --accent-color: #00bcd4;
   }
   
-  body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-  }
-  
-  button {
-    background-color: var(--accent-color);
-    color: #fff;
-  }
-  
-
-body {
-    font-family: 'Roboto Mono', monospace;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-[data-theme="dark"] {
-    background-color: #121212 !important;
-    color: #f1f1f1 !important;
-}
-
-[data-theme="dark"] .card,
-[data-theme="dark"] .form-control,
-[data-theme="dark"] #text-display {
-    background-color: #1e1e1e !important;
-    color: #f1f1f1 !important;
-    border-color: #444 !important;
-}
+ 
 
 .correct {
     color: #10b981;
@@ -50,7 +23,7 @@ body {
 }
 
 .current {
-    background-color: #e0f2fe;
+    background-color: #034b7b;
 }
 
 .overlay {
@@ -64,9 +37,7 @@ body {
     z-index: 10;
 }
 
-[data-theme="dark"] .overlay {
-    background: rgba(0, 0, 0, 0.7);
-}
+ 
 
 .popup {
     position: fixed;
@@ -87,7 +58,4 @@ body {
     width: 90%;
 }
 
-[data-theme="dark"] .popup-content {
-    background-color: #222;
-    color: #f1f1f1;
-}
+ 
