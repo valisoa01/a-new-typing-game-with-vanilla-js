@@ -150,4 +150,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
- 
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('checkbox');
+    const toggleIcon = document.getElementById('toggle-icon').querySelector('i');
+    const html = document.documentElement;
+
+    // Vérifier le thème sauvegardé ou utiliser le préféré système
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
+    
+    // Appliquer le thème initial
+    html.setAttribute('data-bs-theme', savedTheme);
+    themeToggle.checked = savedTheme === 'dark';
+    updateThemeIcon(savedTheme);
+
+    // Gestion du changement de thème
+    themeToggle.addEventListener('change', function() {
+        const newTheme = this.checked ? 'dark' : 'light';
+        html.setAttribute('data-bs-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+    });
+
+    function updateThemeIcon(theme) {
+        if (theme === 'dark') {
+            toggleIcon.className = 'fas fa-moon';
+            toggleIcon.style.color = '#ffeb3b'; // Jaune pour la lune
+        } else {
+            toggleIcon.className = 'fas fa-sun';
+            toggleIcon.style.color = '#ff9800'; // Orange pour le soleil
+        }
+    }
+});
