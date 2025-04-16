@@ -1,43 +1,151 @@
+:root {
+  --primary-color: #000000;
+  --secondary-color: #dfa408;
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --card-bg: #1e1e1e;
+  --card-header-bg: #2d2d2d;
+}
+.light-mode {
+  --primary-color: #f8f9fa;
+  --secondary-color: #ffc107;
+  --bg-color: #f8f9fa;
+  --text-color: #212529;
+  --card-bg: #ffffff;
+  --card-header-bg: #e9ecef;
+}
+.theme-switch-wrapper{
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  border-radius: 10px;
+  transition: 0.5s ease;
+}
+#toggle-icon {
+  margin-right: 10px;
+  color: var(--secondary-color);
+  transition: 4s ease;
+}
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: var(--secondary-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #112e9e;
-    color: white;
-    text-align: center;
+   align-items: center;
+  height: 100vh;
+  font-family: sans-serif;
+  background: #0a0a0ade;
+   color: var(--text-color);
+  transition: all 0.3s ease;
+  padding: 0;
+  }
+  body.dark-mode{
+    background: #000000d7;
+    z-index: -2;
   }
   
   .header {
-    background-color: #001a66;
-    padding: 1rem;
-    display: flex;
+    background-color:#ffffff;
+    padding: 1.5rem;
     align-items: center;
-    justify-content: center;
-    position: relative;
-    border-bottom: 3px solid gold;
+    display: flex;
+    border-radius: 10px;
+    transition: background 0.5s ease;
+    box-shadow: 1px 1px 1px 4px #ccc;
+
+       }
+  body.dark-mode .header{
+    background: #000;
+    box-shadow: 1px 1px 1px 4px #d0d0d096;
+
+  }
+  body.dark-mode .header h1{
+    color: #dfa408;
+  }
+    .header h1{
+      margin-left: 30vw;
+      color: #000000;
+    }
+  h3 span{
+    color: gold;
+  }
+  h3{
+    color:#000000;
+    font-size: 1rem;
+    transition: 0.8s ease;
+  }
+  body.dark-mode h3{
+    color: #dfa408;
+    font-size: 1.5rem;
+  }
+  body.dark-mode h3 span{
+    color: #fff;
   }
   
-  .header button {
-    position: absolute;
-    left: 1rem;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
+ 
   
   .stats {
     display: flex;
-    justify-content: center;
-    background-color: #dcdcdc;
+    justify-content: space-between;
+    background-color: #ffffff;
+     box-shadow: 1px 1px 1px 4px #ccc;
+     border-radius: 10px;
+     padding: 25px;
     color: black;
+    transition: 0.5s ease;
+    margin-top: 5vh;
   }
-  
-  .stats > div {
-    flex: 1;
-    padding: 0.5rem;
-    font-weight: bold;
+  body.dark-mode .stats{
+    background: #1e1e1e;
+    color: #fff;
   }
+ 
   
   .stats p {
     font-size: 1.5rem;
@@ -54,10 +162,12 @@ body {
   
   .main {
     margin-top: 100px;
+     text-align: center;
   }
   
   .letter {
     font-size: 4rem;
+    color: #000;
     font-weight: bold;
     margin-bottom: 1rem;
     text-shadow: 1px 1px 2px yellow;
@@ -73,33 +183,3 @@ body {
     width: 100px;
   }
   
-   *{
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-#g_id_onload {
-  display: none;
-}
-.card-custom {
-    border-radius: 20px;
-    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
-  }
-  .illustration {
-    width: 100%;
-    height: auto;
-    border-radius: 16px;
-  }
-  body.dark_mode {
-    background-color: #121212;
-    color: #f8f9fa;
-  }
-  .dark_mode .card {
-    background: #1e1e1e;
-    color: #f8f9fa;
-  }
-
-  .theme-toogle {
-    position: absolute;
-    top : 20px;
-    right: 20px;
-  }
