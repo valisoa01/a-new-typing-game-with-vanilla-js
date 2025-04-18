@@ -27,3 +27,59 @@ checkbox.addEventListener('change', () => {
     setTimeout(createBubbles, 300); 
 })
 window.addEventListener('resize', createBubbles);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const userImage = document.getElementById('userImage');
+    const chevron = document.querySelector('.fa-chevron-right');
+    const userDropdown = document.getElementById('userDropdown');
+    const dropdownBackdrop = document.createElement('div');
+    dropdownBackdrop.className = 'dropdown-backdrop';
+    document.body.appendChild(dropdownBackdrop);
+  
+    function toggleProfileMenu(e) {
+      e.stopPropagation();
+      
+      const isShowing = userDropdown.classList.toggle('show');
+      
+
+      userImage.classList.toggle('active', isShowing);
+      chevron.classList.toggle('active', isShowing);
+      dropdownBackdrop.classList.toggle('active', isShowing);
+      
+
+      if (isShowing) {
+        document.addEventListener('click', closeProfileMenu);
+        window.addEventListener('scroll', closeProfileMenu);
+      } else {
+        removeEventListeners();
+      }
+    }
+  
+    function closeProfileMenu(e) {
+      if (!userDropdown.contains(e.target) && !userImage.contains(e.target)) {
+        userDropdown.classList.remove('show');
+        userImage.classList.remove('active');
+        chevron.classList.remove('active');
+        dropdownBackdrop.classList.remove('active');
+        removeEventListeners();
+      }
+    }
+  
+    function removeEventListeners() {
+      document.removeEventListener('click', closeProfileMenu);
+      window.removeEventListener('scroll', closeProfileMenu);
+    }
+  
+    userImage.addEventListener('click', toggleProfileMenu);
+    
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && userDropdown.classList.contains('show')) {
+        userDropdown.classList.remove('show');
+        userImage.classList.remove('active');
+        chevron.classList.remove('active');
+        dropdownBackdrop.classList.remove('active');
+        removeEventListeners();
+      }
+    });
+  });
