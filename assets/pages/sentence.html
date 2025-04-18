@@ -7,7 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="/assets/styles/typing.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="stylesheet" href="/assets/styles/sentence.css">
 </head>
 <body>
     <header class="shadow-sm py-3 sticky-top" >
@@ -18,8 +19,6 @@
             <div class="d-flex align-items-center gap-3">
                 <p class="lead mb-0 d-none d-md-block">Test your typing speed</p>
             </div>
-            <div >
-            </div>
             <div class="theme-switch-wrapper">
                 <span id="toggle-icon">
                     <i class="fas fa-sun"></i>
@@ -28,7 +27,7 @@
                     <input type="checkbox" id="checkbox">
                     <div class="slider round"></div>
                 </label>
-               <a href="/accueil.html"> <button class="btn btn-primary m-lg-4"><i class="fa-solid fa-right-from-bracket"></i></button></a>
+                <a href="/accueil.html"> <button class="btn btn-primary m-lg-4"><i class="fa-solid fa-right-from-bracket"></i></button></a>
 
             </div>
         </div>
@@ -39,19 +38,10 @@
             <div class="col-lg-8  w-100">
                 <div class="card shadow mb-3">
                     <div class="card-body">
-                         <div class="d-flex justify-content-between">
-                            <div class="d-flex flex-wrap justify-content-center gap-3 mb-2 text-dark">
-                                <button onclick="setLevel('easy')" class="btn btn-level btn-outline-success">
-                                    😎Easy
-                                </button>
-                                <button onclick="setLevel('medium')" class="btn btn-level btn-outline-warning">
-                                    😉Medium
-                                </button>
-                                <button onclick="setLevel('hard')" class="btn btn-level btn-outline-danger">
-                                    😣Hard
-                                </button>
-                            </div>
-                            <div class="text-center mb-3">
+                        <h2 class="card-title text-center mb-2 ">Typing Speed Test</h2>
+                        <div class="d-flex justify-content-between">
+                         
+                            <div class="text-center mb-3 m-auto">
                                 <span class="badge bg-primary fs-5 px-4 py-2">
                                     <i class="fas fa-clock me-2"></i>
                                     <span id="timer">60s</span>
@@ -61,7 +51,7 @@
                         
                  
 
-                         <div class="row g-3 mt-3 ">
+                         <div class="row g-3 mt-1 ">
                             <div class="col-md-3 col-6 shadow-lg">
                                 <div class="stats-card card h-100 text-center py-3 types">
                                     <div class="card-body ">
@@ -106,7 +96,7 @@
 
                   
 
-                         <div id="phrase" class="text-tertiary p-4 rounded mb-4 mt-4 border-black" style="min-height: 100px; font-size: 1.2rem;"></div>
+                         <div id="phrase" class="text-tertiary p-4 text-center rounded mb-4 mt-4 border-black text-centerp " ></div>
 
                          <div class="mb-4">
                             <input type="text" id="typing-input" class="form-control form-control-lg typing-input" placeholder="Start typing..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
@@ -126,7 +116,7 @@
   
     </footer>
 
-    <script src="/assets/script/typing.js">
+    <script src="/assets/script/sentence.js">
        
     </script>
 </body>
