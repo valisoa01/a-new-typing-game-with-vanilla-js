@@ -31,6 +31,12 @@
   margin-right: 10px;
   color: var(--secondary-color);
 }
+body.dark-mode .g_id_signin{
+  background: #000;
+  border-radius: 10px #d5a806;
+  color: #c79107;
+
+}
 
 .theme-switch {
   display: inline-block;
