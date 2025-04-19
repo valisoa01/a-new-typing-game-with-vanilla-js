@@ -1,24 +1,24 @@
 const phrases = {
   easy: [
-    "The quick brown fox jumps over the lazy dog.",
-    "Pack my box with five dozen liquor jugs.",
-    "How vexingly quick daft zebras jump!",
-    "Bright vixens jump; dozy fowl quack.",
-    "Jackdaws love my big sphinx of quartz."
+    "Le rapide renard brun saute par-dessus le chien paresseux.",
+    "Emballez ma boîte avec cinq douzaines de cruches de liqueur.",
+    "Comme les zèbres sautent vite et bizarrement !",
+    "Des renardes vives sautent ; des volailles somnolentes cancanent.",
+    "Les choucas aiment mon grand sphinx de quartz."
   ],
   medium: [
-    "The five boxing wizards jump quickly.",
-    "Crazy Fredrick bought many very exquisite opal jewels.",
-    "We promptly judged antique ivory buckles for the next prize.",
-    "A wizard's job is to vex chumps quickly in fog.",
-    "Jaded zombies acted quaintly but kept driving their oxen forward."
+    "Les cinq sorciers de boxe sautent rapidement.",
+    "Fredrick le fou a acheté de très magnifiques bijoux en opale.",
+    "Nous avons rapidement jugé des boucles d'ivoire antiques pour le prochain prix.",
+    "Le travail d’un sorcier est d’énerver rapidement les idiots dans le brouillard.",
+    "Des zombies blasés agissaient avec originalité mais continuaient à pousser leurs bœufs."
   ],
   hard: [
-    "Sphinx of black quartz, judge my vow.",
-    "The quick onyx goblin jumps over the lazy dwarf.",
-    "Brawny gods just flocked up to quiz and vex him.",
-    "Foxy diva Jennifer Lopez wasn't baking my quiche.",
-    "Two driven jocks help fax my big quiz."
+    "Sphinx de quartz noir, juge mon serment.",
+    "Le gobelin onyx rapide saute par-dessus le nain paresseux.",
+    "Des dieux musclés sont juste arrivés pour le questionner et l’irriter.",
+    "La diva sexy Jennifer Lopez ne faisait pas cuire ma quiche.",
+    "Deux sportifs motivés m’aident à envoyer mon grand quiz par fax."
   ]
 };
 
@@ -102,12 +102,15 @@ function updateStats() {
   progressRing.style.strokeDashoffset = dashoffset;
   accuracyDisplay.textContent = `${accuracy}%`;
 
-  if (startTime && elapsedSeconds > 0) {
-    const minutes = elapsedSeconds / 60;
-    const wpm = Math.round((correct / 5) / minutes);
+  if (startTime) {
+    const now = new Date();
+    const secondsElapsed = Math.round((now - startTime) / 1000);
+    const minutes = secondsElapsed / 60;
+    const wpm = minutes > 0 ? Math.round((correct / 5) / minutes) : 0;
     wpmDisplay.textContent = wpm;
   }
 }
+
 
 function showStatsPopup() {
   stopTimer();
@@ -120,14 +123,14 @@ function showStatsPopup() {
   const popup = document.createElement("div");
   popup.classList.add("popup");
   popup.innerHTML = `
-     <h2> Résultat</h2>
-      <table class="stats-table">
-     <tr><td>Mots corrects</td><td>${correct}</td></tr>
-     <tr><td>Mots faux</td><td>${wrong}</td></tr>
-    <tr><td>Précision</td><td>${accuracy}%</td></tr>
-     <tr><td>Vitesse (WPM)</td><td>${wpm}</td></tr>
+     <h2> Résultat </h2>
+     <table class="stats-table">
+        <tr><td>Mots corrects</td><td>${correct}</td></tr>
+        <tr><td>Mots incorrects</td><td>${wrong}</td></tr>
+        <tr><td>Précision</td><td>${accuracy}%</td></tr>
+        <tr><td>Vitesse (MPM)</td><td>${wpm}</td></tr>
      </table>
-     <button onclick="resetGame(); document.body.removeChild(this.parentElement)"> Rejouer</button>
+     <button onclick="resetGame(); document.body.removeChild(this.parentElement)"> Rejouer </button>
     `;
   document.body.appendChild(popup);
 }
@@ -201,7 +204,7 @@ function checkInput() {
   updateStats();
 }
 
- typingInput.addEventListener("input", function () {
+typingInput.addEventListener("input", function () {
   if (!startTime) {
     startTime = new Date();
     startTimer();
