@@ -27,10 +27,12 @@
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  transition: all 0.3s ease;
+  transition: all 1.5s ease;
 }
 header{
   background-color: var(--card-bg);
+  transition: all 1.5s ease;
+
 }
 .popup {
   position: fixed;
@@ -85,6 +87,7 @@ header{
   display: flex;
   align-items: center;
   gap: 10px;
+  transition: all 1.5s ease;
 }
 
 .theme-switch {
@@ -92,12 +95,14 @@ header{
   display: inline-block;
   width: 60px;
   height: 30px;
+  transition: all 1.5s ease;
 }
 
 .theme-switch input {
   opacity: 0;
   width: 0;
   height: 0;
+  transition: all 1.5s ease;
 }
 
 .slider {
@@ -108,8 +113,9 @@ header{
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  transition: .4s;
+  transition: all 1.5s ease;
   border-radius: 34px;
+
 }
 
 .slider:before {
@@ -120,8 +126,9 @@ header{
   left: 4px;
   bottom: 4px;
   background-color: white;
-  transition: .4s;
+  transition: all 1.5s ease;
   border-radius: 50%;
+
 }
 
 input:checked + .slider {
@@ -130,11 +137,15 @@ input:checked + .slider {
 
 .types{
   box-shadow: 1px 1px 1px 4px #ccc;
+  transition: all 1.5s ease;
+
 }
  
 
 input:checked + .slider:before {
   transform: translateX(30px);
+  transition: all 1.5s ease;
+
 }
 
 .word {
@@ -142,6 +153,7 @@ input:checked + .slider:before {
   border-radius: 4px;
   padding: 2px 4px;
   margin: 0 2px;
+  transition: all 1.5s ease;
 }
 
 .word.current {
@@ -188,6 +200,8 @@ input:checked + .slider:before {
   background-color: var(--input-bg);
   color: var(--dark-color);
   border-color: var(--secondary-color);
+  transition: all 1.5s ease;
+
 }
 .position-relative{
   width: 60px;
@@ -198,6 +212,7 @@ input:checked + .slider:before {
   background-color: var(--card-bg);
   border-color: var(--secondary-color);
   color: var(--dark-color);
+  transition: all 1.5s ease;
 }
 
 .btn-level {
@@ -210,7 +225,7 @@ input:checked + .slider:before {
 }
 
 .stats-card {
-  transition: all 0.3s ease;
+  transition: all 1.5s ease;
 }
 
 .stats-card:hover {

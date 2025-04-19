@@ -25,52 +25,7 @@
       }
     });
   });
-  document.addEventListener('DOMContentLoaded', function() {
-     const storedTheme = localStorage.getItem('theme') || 'dark';
-    
-     document.documentElement.setAttribute('data-bs-theme', storedTheme);
-
-     updateActiveIcon(storedTheme);
-
-     updateActiveThemeButton(storedTheme);
-
-     document.querySelectorAll('[data-bs-theme-value]').forEach(button => {
-        button.addEventListener('click', () => {
-            const theme = button.getAttribute('data-bs-theme-value');
-            
-             document.documentElement.setAttribute('data-bs-theme', theme);
-            
-             localStorage.setItem('theme', theme);
-            
-             updateActiveThemeButton(theme);
-            updateActiveIcon(theme);
-        });
-    });
-
-    function updateActiveThemeButton(theme) {
-        document.querySelectorAll('[data-bs-theme-value]').forEach(btn => {
-            const isActive = btn.getAttribute('data-bs-theme-value') === theme;
-            btn.classList.toggle('active', isActive);
-            const checkIcon = btn.querySelector('.bi.ms-auto');
-            if (checkIcon) {
-                checkIcon.classList.toggle('d-none', !isActive);
-            }
-        });
-    }
-
-    function updateActiveIcon(theme) {
-        const icon = document.querySelector('.theme-icon-active use');
-        if (icon) {
-            if (theme === 'light') {
-                icon.setAttribute('href', '#sun-fill');
-            } else if (theme === 'dark') {
-                icon.setAttribute('href', '#moon-stars-fill');
-            } else {
-                icon.setAttribute('href', '#circle-half');
-            }
-        }
-    }
-});
+ 
 
  const text = "Apprenez à taper plus vite avec typing vanilla.";
 const typingElement = document.getElementById("typing");

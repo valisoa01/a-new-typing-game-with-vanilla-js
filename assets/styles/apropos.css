@@ -1,6 +1,226 @@
-body {
-    background: #f8f9fa;
+.butt{
+  margin-left: 7vw;
+   }
+  :root {
+      --primary-color: #0d6efd;
+      --secondary-color: #6c757d;
+      --success-color: #198754;
+      --danger-color: #dc3545;
+      --light-color: #f8f9fa;
+      --dark-color: #212529;
+      --bg-color: #ffffff;
+      --text-color: #212529;
+      --card-bg: #f8f9fa;
+      --input-bg: #ffffff;
+    }
+    
+    [data-theme="dark"] {
+      --primary-color: #0d6efd;
+      --secondary-color: #6c757d;
+      --success-color: #198754;
+      --danger-color: #dc3545;
+      --light-color: #343a40;
+      --dark-color: #f8f9fa;
+      --bg-color: #212529;
+      --text-color: #f8f9fa;
+      --card-bg: #2c3034;
+      --input-bg: #343a40;
+    }
+    
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: all 1.5s ease;
+       }
+   
+     
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translate(-50%, -40%); }
+      to { opacity: 1; transform: translate(-50%, -50%); }
+    }
+    .nav-apropos{
+      color: var(--secondary-color);
+      transition: color 1.5s ease;
+   }
+      
+    
+    .theme-switch-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: 1.5s ease;
+ 
+    }
+    
+    .theme-switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 30px;
+      transition: 1.5s ease;
+
+    }
+    h3{
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-style: italic;
   }
+ 
+  .card-body p{
+    color: var(--secondary-color);
+  }
+  
+  h3 .titre{
+      color: #dfa408;
+  }
+    
+    .theme-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      transition: 1.5s ease;
+
+    }
+    
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+       border-radius: 34px;
+       transition: 1.5s ease;
+
+    }
+    
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 22px;
+      width: 22px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      border-radius: 50%;
+      transition: 1.5s ease;
+
+    }
+    
+    input:checked + .slider {
+      background-color: var(--primary-color);
+    }
+    
+    .types{
+      box-shadow: 1px 1px 1px 4px #ccc;
+      transition: 1.5s ease;
+
+    }
+     
+    
+    input:checked + .slider:before {
+      transform: translateX(30px);
+    }
+   
+    
+    .word {
+      transition: all 0.2s ease;
+      border-radius: 4px;
+      padding: 2px 4px;
+      margin: 0 2px;
+    }
+    
+    .word.current {
+      background-color: rgba(13, 110, 253, 0.2);
+      position: relative;
+      transition: 1.5s ease;
+
+    }
+    
+    .word.current::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--primary-color);
+      animation: blink 1s infinite;
+      transition: 1.5s ease;
+
+    }
+    
+    .word.correct {
+      color: var(--success-color);
+      transition: 1.5s ease;
+
+    }
+    
+    .word.wrong {
+      color: var(--danger-color);
+      text-decoration: underline;
+      transition: 1.5s ease;
+
+    }
+    
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    
+    .progress-ring {
+      transform: rotate(-90deg);
+    }
+    
+    .progress-ring__circle {
+      transition: stroke-dashoffset 1.5s ease;
+      transform-origin: 50% 50%;
+ 
+    }
+    
+    .typing-input {
+      caret-color: var(--primary-color);
+      background-color: var(--input-bg);
+      color: var(--dark-color);
+      border-color: var(--secondary-color);
+      transition: 1.5s ease;
+
+    }
+    .position-relative{
+      width: 60px;
+       height: 60px;
+       transition: 1.5s ease;
+
+    }
+    
+    .card {
+      background-color: var(--card-bg);
+      border-color: var(--secondary-color);
+      color: var(--dark-color);
+      transition: 1.5s ease;
+
+    }
+    
+    .btn-level {
+      transition: all 1.2s ease;
+    }
+    
+    .btn-level.active {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: 1.5s ease;
+
+    }
+    
+    .stats-card {
+      transition: all 1.3s ease;
+    }
+    
+    .stats-card:hover {
+      transform: translateY(-5px);
+      transition: 1.5s ease;
+
+    }
 
   .hero {
     background-color: #fff;
@@ -21,4 +241,35 @@ body {
     font-weight: bold;
     margin-top: 40px;
     margin-bottom: 20px;
+    transition: 1.5s ease;
   }
+  .team-member-img{
+    width: 50%;
+    aspect-ratio: 1/1;
+    border: 3px solid #0330ab;    
+    border-radius: 50%;
+   }
+   h2{
+    text-align: center;
+    margin-top: -5vh;
+    transition: 1.5s ease;
+   }
+ 
+ @media (max-width: 768px) {
+  h2{
+    margin-top: 3vh;
+  }
+  .button{
+    margin-left: 20vw;
+  }
+  .vanilla{
+    text-align: center;
+    margin-left: 20vw;
+
+  }
+  .icon-contact{
+    margin-left: 20vw;
+
+  }
+ }
+ 

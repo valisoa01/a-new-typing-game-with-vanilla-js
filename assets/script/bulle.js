@@ -22,7 +22,7 @@ function createBubbles() {
         container.appendChild(bubble);
     }
 }
-document.addEventListener('DOMContentLoaded', createBubbles);
+                                                                                                                                                                                                               document.addEventListener('DOMContentLoaded', createBubbles);
 checkbox.addEventListener('change', () => {
     setTimeout(createBubbles, 300); 
 })

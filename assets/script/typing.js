@@ -186,8 +186,7 @@ function checkInput() {
       renderWords();
     }
   } else if (currentWord.startsWith(inputValue)) {
-    // partial correct, do nothing
-  } else {
+   } else {
     wrong++;
     typingInput.value = "";
 
@@ -202,8 +201,7 @@ function checkInput() {
   updateStats();
 }
 
-// Événements
-typingInput.addEventListener("input", function () {
+ typingInput.addEventListener("input", function () {
   if (!startTime) {
     startTime = new Date();
     startTimer();

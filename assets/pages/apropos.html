@@ -1,85 +1,331 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>À propos de Vanilla Typing</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    body {
-      background: #f8f9fa;
-    }
-
-    .hero {
-      background-color: #fff;
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      margin-top: 60px;
-    }
-
-    .hero img {
-      width: 100%;
-      border-radius: 15px;
-      max-height: 300px;
-      object-fit: cover;
-    }
-
-    .section-title {
-      font-weight: bold;
-      margin-top: 40px;
-      margin-bottom: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpeedTyper - Typing Speed Test</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link rel="stylesheet" href="/assets/styles/apropos.css">
+ 
 </head>
 <body>
-
-<div class="container hero">
-  <div class="row align-items-center">
-    <div class="col-md-6 text-center mb-4 mb-md-0">
-      <!-- Nouvelle image de clavier -->
-      <img src="/assets/images/clavier.png" alt="Clavier illustration" class="img-fluid shadow" />
-    </div>
-    <div class="col-md-6">
-      <h1 class="mb-4">Bienvenue sur <span class="text-primary">Vanilla Typing</span> 🎮</h1>
-      <p class="lead">Vanilla Typing est un jeu web éducatif conçu pour améliorer votre rapidité et précision en dactylographie, tout en vous amusant.</p>
-    </div>
-  </div>
-
-  <!-- Objectif -->
-  <div class="section-title">🎯 Objectif du jeu</div>
-  <p>L'objectif de Vanilla Typing est de vous aider à devenir plus rapide et précis lorsque vous tapez au clavier. Grâce à plusieurs modes, vous pouvez apprendre progressivement ou vous challenger avec des niveaux plus complexes.</p>
-
-  <!-- Comment jouer -->
-  <div class="section-title">🕹️ Comment jouer ?</div>
-  <ul>
-    <li><strong>Étape 1 :</strong> Choisissez un mode de jeu : Apprendre, 1 Minute, ou Texte complet.</li>
-    <li><strong>Étape 2 :</strong> Sélectionnez un niveau de difficulté : Facile, Moyen, Difficile.</li>
-    <li><strong>Étape 3 :</strong> Commencez à taper les mots ou phrases affichés. Le minuteur démarre dès votre première touche.</li>
-    <li><strong>Étape 4 :</strong> Obtenez vos résultats à la fin : nombre de mots tapés, erreurs, et score final.</li>
-  </ul>
-
-  <!-- Nouvelle image supplémentaire -->
-  <div class="text-center my-5">
-    <img src="/assets/images/jeux.png" alt="Jeu de dactylographie" class="img-fluid rounded shadow" style="max-height: 350px;" />
-  </div>
-
-  <!-- Astuces -->
-  <div class="section-title">💡 Astuces pour progresser</div>
-  <ul>
-    <li>Ne regardez pas votre clavier, entraînez votre mémoire musculaire !</li>
-    <li>Commencez par le mode Apprendre si vous êtes débutant.</li>
-    <li>Activez le mode sombre pour plus de confort visuel la nuit.</li>
-  </ul>
-
-  <!-- Bouton vers la page principale -->
-  <div class="text-center mt-5">
-    <a href="index.html" class="btn btn-primary btn-lg">Retour au jeu</a>
-  </div>
-</div>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    <nav id="navbar" class="shadow navbar navbar-expand-lg navbar" aria-label="Offcanvas navbar large" >
+        <div class="container-fluid">
+            <h3 class="m-0"><span class="titre">Vanilla</span>Typping</h3>
+            <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbar2Label">VanillaTyping</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 p-3">
+                        <li class="nav-item">
+                            <a class=" nav-link nav-apropos" aria-current="page" href="/accueil.html">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav nav-link fw-bold" href="/assets/pages/apropos.html">A propos</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex mt-3 mt-lg-0">
  
+                       <a href="/assets/pages/sign_in.html" class="btn btn-outline-primary m-3">Login</a> 
+                       <a href="/assets/pages/sign_in.html" class="btn btn-warning m-3 ">Sign in</a>
+                      </form>
+                </div>
+            </div>
+            <div class="theme-switch-wrapper butt">
+                <span id="themeToggle">
+                    <i class="fas fa-sun"></i>
+                </span>
+                <label class="theme-switch">
+                    <input type="checkbox" id="checkbox">
+                    <div class="slider round"></div>
+                </label>
+        
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="flex-grow-1 py-5">
+        <div class="container containers">
+            <h1 class="text-center mb-5 fw-bold text-primary">À Propos de Vanilla Typing</h1>
+            
+             <section class="mb-5">
+                <div class="card shadow-sm border">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="card-title mb-4 text-primary">
+                            <i class="fas fa-info-circle me-2"></i>Qu'est-ce que Vanilla Typing?
+                        </h2>
+                        <p class="card-text mb-4 fs-5">
+                            Vanilla Typing est une application web conçue pour améliorer votre vitesse et précision de frappe au clavier. 
+                            Contrairement à d'autres applications similaires, Vanilla Typing est construite avec des technologies web 
+                            simples (HTML, CSS, JavaScript) pour offrir une expérience légère et rapide.
+                        </p>
+                        <p class="card-text fs-5">
+                            Notre objectif est de rendre l'apprentissage de la dactylographie amusant et accessible à tous, 
+                            que vous soyez débutant ou expert cherchant à perfectionner vos compétences.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+             <section class="mb-5">
+                <div class="card shadow-sm border">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="card-title  text-primary ">
+                            <i class="fas fa-gamepad me-2"></i>Comment Jouer
+                        </h2>
+                        
+                        <div class="row g-4">
+                             <div class="col-md-4">
+                                <div class="card h-100 border-primary bg-light">
+                                    <div class="card-body text-center p-4">
+                                        <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">
+                                            <span class="fs-5 fw-bold">1</span>
+                                        </div>
+                                        <h3 class="h5 fw-bold text-primary mb-3">Choisissez un Mode</h3>
+                                        <p class="mb-0">Sélectionnez entre les modes chronométrés, les défis de mots ou les textes libres pour pratiquer.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                             <div class="col-md-4">
+                                <div class="card h-100 border-primary bg-light">
+                                    <div class="card-body text-center p-4">
+                                        <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">
+                                            <span class="fs-5 fw-bold">2</span>
+                                        </div>
+                                        <h3 class="h5 fw-bold text-primary mb-3">Tapez le Texte</h3>
+                                        <p class="mb-0">Les mots ou phrases apparaîtront à l'écran. Tapez-les aussi vite et précisément que possible.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                             <div class="col-md-4">
+                                <div class="card h-100 border-primary bg-light">
+                                    <div class="card-body text-center p-4">
+                                        <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">
+                                            <span class="fs-5 fw-bold">3</span>
+                                        </div>
+                                        <h3 class="h5 fw-bold text-primary mb-3">Analysez Vos Résultats</h3>
+                                        <p class="mb-0">À la fin de chaque session, consultez vos statistiques : vitesse (Mots/Minute), précision et temps de réponse.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+             <section class="mb-5">
+                <div class="card shadow-sm border">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="card-title mb-4 text-primary">
+                            <i class="fas fa-bullseye me-2"></i>Objectifs du Jeu
+                        </h2>
+                        
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="d-flex">
+                                    <div class="text-primary">
+                                        <i class="fas fa-tachometer-alt fs-4"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="h5 fw-bold text-primary mb-2">Améliorer la Vitesse</h3>
+                                        <p class="mb-0">Augmentez progressivement votre vitesse de frappe pour devenir plus efficace dans votre travail ou études.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="d-flex">
+                                    <div class="text-primary">
+                                        <i class="fas fa-check-circle fs-4"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="h5 fw-bold text-primary mb-2">Développer la Précision</h3>
+                                        <p class="mb-0">Réduisez vos erreurs de frappe pour gagner du temps et améliorer la qualité de vos écrits.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="d-flex">
+                                    <div class="text-primary">
+                                        <i class="fas fa-brain fs-4"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="h5 fw-bold text-primary mb-2">Mémoire Musculaire</h3>
+                                        <p class="mb-0">Apprenez à taper sans regarder le clavier grâce à la répétition et à la pratique régulière.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+             <section class="mb-5">
+                <div class="card shadow-sm border">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="card-title mb-4 text-primary">
+                            <i class="fas fa-users me-2"></i>Notre Équipe
+                        </h2>
+                        
+                        <div class="row justify-content-center">
+                             <div class="col-md-6 col-lg-5 mb-4">
+                                <div class="card cards h-100 border-0 bg-light">
+                                    <div class="card-body text-center p-4">
+                                        <img src="/assets/images/Photo-Valisoa.jpg" alt="Valisoa Tolotriniaina Rafanomezantsoa" class="team-member-img ">
+                                        <h3 class="h5 fw-bold mb-2">Valisoa Tolotriniaina Rafanomezantsoa</h3>
+                                        <p class="text-primary mb-3">Développeur</p>
+                                        <div class="d-flex justify-content-center gap-3">
+                                            <a href="#" class="text-dark"><i class="fab fa-twitter fs-5"></i></a>
+                                            <a href="#" class="text-dark"><i class="fab fa-linkedin fs-5"></i></a>
+                                            <a href="#" class="text-dark"><i class="fab fa-github fs-5"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                             <div class="col-md-6 col-lg-5 mb-4">
+                                <div class="card h-100 border-0 bg-light">
+                                    <div class="card-body text-center p-4">
+                                        <img src="/assets/images/Photo-Alpha.jpg" alt="Aina Alpha" class="team-member-img ">
+                                        <h3 class="h5 fw-bold mb-2">Aina Alpha</h3>
+                                        <p class="text-primary mb-3">Développeur</p>
+                                        <div class="d-flex justify-content-center gap-3">
+                                            <a href="#" class="text-dark"><i class="fab fa-twitter fs-5"></i></a>
+                                            <a href="#" class="text-dark"><i class="fab fa-linkedin fs-5"></i></a>
+                                            <a href="#" class="text-dark"><i class="fab fa-github fs-5"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+             <section>
+                <div class="card shadow-sm border">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="card-title mb-4 text-primary">
+                            <i class="fas fa-envelope me-2"></i>Contactez-Nous
+                        </h2>
+                        
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <h3 class="h4 mb-4">Informations de Contact</h3>
+                                <div class="d-flex align-items-start mb-4">
+                                    <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3 text-primary">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="h6 fw-bold mb-1">Adresse</h4>
+                                        <p class="mb-0">HH 24A bis, Soavimasoandro, Antananarivo</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex align-items-start mb-4">
+                                    <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3 text-primary">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="h6 fw-bold mb-1">Email</h4>
+                                        <p class="mb-0">Valisoatolotriniaina@gmail.com</p>
+                                        <p class="mb-0">hei.alpha25@gmail.com</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex align-items-start">
+                                    <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3 text-primary">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="h6 fw-bold mb-1">Téléphone</h4>
+                                        <p class="mb-0">+261341665172</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <h3 class="h4 mb-4">Envoyez-nous un Message</h3>
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Nom</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Votre nom">
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Votre email">
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="message" class="form-label">Message</label>
+                                        <textarea class="form-control" id="message" rows="4" placeholder="Votre message"></textarea>
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-primary px-4 py-2 button">
+                                        Envoyer le Message
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+     <footer class="footer bg-light border-top py-5 mt-auto">
+        <div class="container">
+            <div class="row align-items-center mb-4">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <a class="d-flex align-items-center text-decoration-none vanilla" href="#">
+                        <i class="fas fa-keyboard me-2 fs-2 text-primary"></i>
+                        <span class="fs-4 fw-bold text-primary ">Vanilla Typing</span>
+                    </a>
+                    <p class="mt-2 mb-0 text-muted">Améliorez votre dactylographie en vous amusant</p>
+                </div>
+                
+                <div class="col-md-6 text-md-end">
+                    <div class="d-flex justify-content-md-end gap-3 icon-contact">
+                        <a href="#" class="text-muted"><i class="fab fa-facebook-f fs-5"></i></a>
+                        <a href="#" class="text-muted"><i class="fab fa-twitter fs-5"></i></a>
+                        <a href="#" class="text-muted"><i class="fab fa-instagram fs-5"></i></a>
+                        <a href="#" class="text-muted"><i class="fab fa-github fs-5"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-top pt-4">
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <p class="mb-0 text-muted">© 2025 Vanilla Typing. Tous droits réservés.</p>
+                    </div>
+                    
+                    <div class="col-md-6 text-md-end">
+                        <div class="d-flex flex-wrap justify-content-md-end gap-3">
+                            <a href="#" class="text-muted text-decoration-none">Politique de confidentialité</a>
+                            <a href="#" class="text-muted text-decoration-none">Conditions d'utilisation</a>
+                            <a href="#" class="text-muted text-decoration-none">FAQ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/script/typing.js">
+       
+    </script>
+    </body>
+    </html>
