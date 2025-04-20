@@ -13,6 +13,11 @@
   background-color: #4299e1;
   color: white;
 }
+.typing-input{
+  width: 50%;
+  margin: auto;
+  padding-left: 15vw;
+}
 .dark-mode .btn-primary:hover {
   background-color: #3182ce;
 }
@@ -35,4 +40,7 @@
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
+}
+.phrase{
+  font-size: 3rem;
 }
