@@ -4,7 +4,7 @@ function handleCredentialResponse(response) {
   
    localStorage.setItem("user", JSON.stringify(data));
 
-   window.location.href = "/assets/pages/menu.html";
+window.location.href = "/menu.html";
 }
 
 function parseJwt(token) {
@@ -18,7 +18,7 @@ function parseJwt(token) {
 
 window.onload = () => {
   google.accounts.id.initialize({
-    client_id: "940374287458-jblc2ahrdplmjctghabpmgirdiauuvjc.apps.googleusercontent.com",
+    client_id: "384874103-ehtqhdl38hh2vuofrc1cp9vord9486dm.apps.googleusercontent.com",
     callback: handleCredentialResponse
   });
   google.accounts.id.renderButton(
