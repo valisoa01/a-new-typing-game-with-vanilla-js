@@ -4,7 +4,7 @@ function handleCredentialResponse(response) {
   
    localStorage.setItem("user", JSON.stringify(data));
 
-    window.location.href = "../../index.html";
+    window.location.href = "../pages/menu.html";
 }
 
 function parseJwt(token) {
