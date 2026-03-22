@@ -18,7 +18,7 @@ function parseJwt(token) {
 
 window.onload = () => {
   google.accounts.id.initialize({
-    client_id: "384874103-ehtqhdl38hh2vuofrc1cp9vord9486dm.apps.googleusercontent.com",
+    client_id: "384874103-20dptrjml4nrua36upu0vfp15p0clb8p.apps.googleusercontent.com",
     callback: handleCredentialResponse
   });
   google.accounts.id.renderButton(
